@@ -15,23 +15,25 @@ digit_letter_dict = {
 
 def convert_letter_to_num(string):
 
+    converted_string = ''
+
     # for each index in eightwothree
     for i in range(len(string)):
-        # for each index, start slicing the window +1 until len(string)
-        j = i
-        # slicing window until len(string)
-        while j <= len(string):
-            # if the window matches, replace the window with the number from dict, and
-            # recursivly call on that newly changed string
-            if string[i:j] in digit_letter_dict.keys():
-                string = string.replace(string[i:j], digit_letter_dict[string[i:j]])
-                convert_letter_to_num(string)
-            # no match: keep on +1 the window slicing
-            else:
-                j += 1
-        
-    # If no changes are made in this iteration, return the result
-    return string
+        # if number, just add
+        if string[i].isdigit():
+            converted_string += string[i]
+            continue
+        # else, not number, it's letter -> check using dict
+        else:
+            j = i
+            while j <= len(string):
+                if string[i:j] in digit_letter_dict.keys():
+                    converted_string += digit_letter_dict[string[i:j]]
+                    break
+                else:
+                    j += 1
+    
+    return converted_string
 
 
 def sum_calibrations(input):
