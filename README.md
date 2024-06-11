@@ -11,3 +11,5 @@ Day 2: 2 hours
 - helpful reduce functools i.e. def mul(x,y) then reduce(mul, [1,2,3])
 - always start from some examples to understand
 
+Day 3: 2.3 hours - undone
+Adjacency index is hard
