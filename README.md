@@ -28,3 +28,4 @@ Day 3: 36 hours
     - My answer is lower than expected one. I think the reason is likely because of this `* [897, 897, 847, 847]` from the full input. More than 1 hour failing to fix this. Skip for now. 
 
 Day 4:    
+Two-pointer technique
