@@ -27,7 +27,7 @@ Day 3: 36 hours
 - struggled
     - My answer is lower than expected one. I think the reason is likely because of this `* [897, 897, 847, 847]` from the full input. More than 1 hour failing to fix this. Skip for now. 
 
-Day 4: 48 hours
+Day 4: 96 hours
 - two-pointer technique
 - Stack: LIFO (push O(1), pop O(1), find O(n)), Queue: FIFO (enqueue O(1), dequeue O(1), find O(n))
 - Dequeue: EIEIO (Enforce in-order execution of I/O)
