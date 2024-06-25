@@ -78,3 +78,16 @@ for i in range(range_length):
     destination = third_list[0]
     soil_ferti[start + i] = destination + i
 ```
+- `str.split()` is almost in every problem so far => might need a better way to optimize this?
+- `defaultdict` and `dict.get()` always come in handy and nice
+- really understanding the problem is important (the wording is a bit challenging to me) 
+    - start from example and really make sure you got the correct example solution
+- my solution for part was too slow (4 minutes) -> fixed:
+    - instead of creating a nested dictionary that I had (with intent to retrieve)
+    - I checked if the given seed is in the range from source_start to source_end (=source_start+range) or not
+        - if yes, nice! go fetch the next source (soil), and so on
+        - if no, keep it as it, aka soil=seed
+- utilize `map` for function utility
+- beware of range and index (my weakness)
+- Sometimes, building everything-then-retrieve solution is much slower than given-input-to-check-and-then-result
+- Part 2 took too much time! => need to optimize
