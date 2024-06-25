@@ -69,3 +69,12 @@ Day 4: 96 hours
         - base case: $dp[0][w] = 0$ for all $w$
 - **Please use regex for pattern recognition**
 - Brilliant, simple to get the common/shared elements with set operations: `common_elements_count = len(set(group1_numbers) & set(group2_numbers))`
+
+Day 5: seems hard
+this is niche
+```python
+for i in range(range_length):
+    start = third_list[1]
+    destination = third_list[0]
+    soil_ferti[start + i] = destination + i
+```
