@@ -1,17 +1,17 @@
 My solutions to https://adventofcode.com/2023.
 
-Day 1: 1 hour
+### Day 1: 1 hour
 - find digits in string: re.findall("\d+", line) = a list
 - do the loop iteration carefully, especially with indices inside string
 
-Day 2: 2 hours
+### Day 2: 2 hours
 - read the prompt carefully
 - use a flag=True and if a violation is met, the flag=False => deal with the violation or break the loop (think about how many loops needed to be broken for optimization)
 - dict.get(key, 0) is very helpful
 - helpful reduce functools i.e. def mul(x,y) then reduce(mul, [1,2,3])
 - always start from some examples to understand
 
-Day 3: 36 hours
+### Day 3: 36 hours
 - adjacency index is hard
 - my approach (not sure if it is the most optimized)
     - I consider the input as array of arrays or list of lists where each list/array is a line in input
@@ -27,7 +27,7 @@ Day 3: 36 hours
 - struggled
     - My answer is lower than expected one. I think the reason is likely because of this `* [897, 897, 847, 847]` from the full input. More than 1 hour failing to fix this. Skip for now. 
 
-Day 4: 96 hours
+### Day 4: 96 hours
 - two-pointer technique
 - Stack: LIFO (push O(1), pop O(1), find O(n)), Queue: FIFO (enqueue O(1), dequeue O(1), find O(n))
 - Dequeue: EIEIO (Enforce in-order execution of I/O)
@@ -70,7 +70,7 @@ Day 4: 96 hours
 - **Please use regex for pattern recognition**
 - Brilliant, simple to get the common/shared elements with set operations: `common_elements_count = len(set(group1_numbers) & set(group2_numbers))`
 
-Day 5: seems hard
+### Day 5: seems hard
 this is niche
 ```python
 for i in range(range_length):
@@ -91,3 +91,7 @@ for i in range(range_length):
 - beware of range and index (my weakness)
 - Sometimes, building everything-then-retrieve solution is much slower than given-input-to-check-and-then-result
 - Part 2 took too much time! => need to optimize
+
+### Day 6: Surprisingly easy
+
+### Day 7: 
