@@ -95,3 +95,7 @@ for i in range(range_length):
 ### Day 6: Surprisingly easy
 
 ### Day 7: 
+- a dataframe's column can be sorted by tuples
+- Python automatically sorts by elements (i.e. first then second then next)
+- multi-dimensional data may be best handled with a dataframe as a data structure
+- TODO: my current solution will be optimized and part 2 will be done soon
