@@ -99,3 +99,6 @@ for i in range(range_length):
 - Python automatically sorts by elements (i.e. first then second then next)
 - multi-dimensional data may be best handled with a dataframe as a data structure
 - TODO: my current solution will be optimized and part 2 will be done soon
+
+### Day 8:
+- 
