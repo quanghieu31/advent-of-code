@@ -101,4 +101,43 @@ for i in range(range_length):
 - TODO: my current solution will be optimized and part 2 will be done soon
 
 ### Day 8:
-- 
+- again, `defaultdict` is amazing
+- to organize code better, do three things consecutively: process_input(), functions learned from example, and input simply
+- if there is a `for` loop in `while` loop, the `while` loop continues to run a new iteration of `for` loop if it still does not reach the false condition.
+- Part 2: no way brute force gives a fast result. I think a BFS or LCM solution might work, part 2 surprisingly takes so much time
+<details>
+
+<summary>Reddit's suggested ideas for using least common multiplier assumptions and solutions</summary>
+
+source: https://www.reddit.com/r/adventofcode/comments/18dtmin/comment/kckf5jg/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
+
+## Observations:
+
+### Cycle Detection:
+Each ghost will eventually reach a cycle. The system's state can be described as (currentNode, instructionIndex). When the same state repeats, the ghost is on a cycle since the directions and nodes will repeat identically. Finite nodes and instructions guarantee this repetition.
+
+### Ghost Convergence:
+If two ghosts starting from different locations meet at the same node simultaneously, they enter the same cycle and will follow identical future paths. This allows for an optimization: post-meeting, one ghost can be disregarded in calculations, as their states will be identical.
+
+## Assumptions:
+
+### Existence of a Solution:
+A solution exists where each ghost’s cycle includes at least one destination. If a ghost reaches the destination before entering its cycle, the problem becomes trivial and solvable by brute force.
+
+### Single Destination in Cycle:
+Each ghost’s cycle has one destination. This holds for the given input, though it can be relaxed for more complex solutions.
+
+## Reformulated Problem:
+Each ghost $G_i$ reaches the destination within its cycle for the first time after $S_i$ steps, repeating with a cycle length $L_i$. The smallest number $N$ such that $N = S_i + L_i \times x_i$ for each ghost $i$ (where $x_i$ is the number of cycle loops) is the solution.
+
+## Special Case Analysis:
+
+### $S_i = 0$:
+If $S_i = 0$ for every ghost $i$, $N$ is an integer multiple of every cycle length $L_i$. The minimum $N$ is the least common multiple (LCM) of the cycle lengths.
+
+### $S_i = k_i \times L_i$:
+When $S_i = k_i \times L_i$ (with integer $k_i$), $N$ can be expressed as $L_i \times (x + k_i)$, making $N$ an integer multiple of the cycle length.
+
+For the given problem, $S_i = L_i$, making the LCM the correct answer. If the starting offset isn't an integer multiple of the cycle length, the solution might require the Chinese Remainder Theorem or similar methods.
+
+</details>
