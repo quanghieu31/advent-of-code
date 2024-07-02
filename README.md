@@ -141,3 +141,12 @@ When $S_i = k_i \times L_i$ (with integer $k_i$), $N$ can be expressed as $L_i \
 For the given problem, $S_i = L_i$, making the LCM the correct answer. If the starting offset isn't an integer multiple of the cycle length, the solution might require the Chinese Remainder Theorem or similar methods.
 
 </details>
+
+### Day 9: 
+- I tried using `reduce(lambda a,b: b-a, sequence)` but it turns out to be inefficient and incorrect. We need to check all elements in sequence are 0, and `all(x == 0 for x in sequence)` works.
+- `while` loop comes in handy and remember to do the flag carefully
+- `for idx, seq in reversed(list(enumerate(all_sequences_incl_hist)))`: No copy is created, the elements are reversed on the fly while traversing => very efficient
+- `deque` for inserting to beginning which takes O(1) with `appendleft(ele)`
+
+### Day 10:
+
