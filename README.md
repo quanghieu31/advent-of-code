@@ -149,4 +149,11 @@ For the given problem, $S_i = L_i$, making the LCM the correct answer. If the st
 - `deque` for inserting to beginning which takes O(1) with `appendleft(ele)`
 
 ### Day 10:
+- Try: 
+    - Find connected components from these elements
+    - Then see which one has a cycle?
+    - First: Cycle detection - find all cycles/loops in this graph (start and end at same vertex) using BFS/DFS
+        - Then: Got a cycle, find the path from S to the farthest point possible (how)
+    - Second: Cycle detection but with topological sorting
+- please look at solution on this day, very important:
 
