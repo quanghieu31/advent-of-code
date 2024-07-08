@@ -54,5 +54,5 @@ def sum_calibrations(input):
 
 
 
-input = "2023/day1/input.txt"
+input = "2023/day01/input.txt"
 print(sum_calibrations(input))

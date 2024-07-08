@@ -1,6 +1,6 @@
 # Part 1
 
-input = '2023\day2\input.txt'
+input = '2023\day02\input.txt'
 with open(input, 'r') as f:
     lines = [line.strip() for line in f.readlines()]
 

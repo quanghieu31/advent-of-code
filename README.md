@@ -155,5 +155,7 @@ For the given problem, $S_i = L_i$, making the LCM the correct answer. If the st
     - First: Cycle detection - find all cycles/loops in this graph (start and end at same vertex) using BFS/DFS
         - Then: Got a cycle, find the path from S to the farthest point possible (how)
     - Second: Cycle detection but with topological sorting
-- please look at solution on this day, very important:
+- please look at solution on this day, very important, [here](https://github.com/quanghieu31/adventofcode/blob/main/2023/day10/solution.py)
+
+### Day 11: 
 
