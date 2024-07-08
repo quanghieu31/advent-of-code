@@ -28,20 +28,15 @@ coord_x, coord_y = find_location_S(arrays)
 
 
 # check adjacent neigbor to entry at start_i, start_j
-top_most, bot_most, left_most, right_most = 0, len(arrays)-1, 0, len(arrays[0])-1
+top_most, bot_most, left_most, right_most = 0, len(arrays), 0, len(arrays[0])
 
-def bool_adjacent_based_on_given_directions(x, y, new_x, new_y):
-    if top_most <= x <= bot_most and left_most <= y <= right_most:
-        if arrays[x][y] in directions.keys(): # to avoid the '.' case
-            
-            for (change_x, change_y) in directions[arrays[x][y]]:
-                
-                # check new_x, new_y if this adjacent
-                if (change_x, change_y) == (-(x-new_x), -(y-new_y)):
+def are_adjacent(x, y, new_x, new_y):
+    if 0 <= new_x < bot_most and 0 <= new_y < right_most:
+        if arrays[new_x][new_y] in directions:    # to avoid the "." case
+            for dx, dy in directions[arrays[new_x][new_y]]:
+                if (new_x + dx, new_y + dy) == (x, y):
                     return True
-
-    return False 
-
+    return False
 
 
 # BFS to find all single connected components
@@ -52,27 +47,21 @@ visited = set((coord_x, coord_y))
 steps_increment = {}
 
 while queue: # running after adding and visiting all pipes in queue
-    
+
     print(queue)
-    x, y, step = queue.popleft()    # rmb: x,y are coordinates/indices
-    steps_increment[(x, y)] = step
+    x, y, dist = queue.popleft()
+    steps_increment[(x, y)] = dist
 
-    # # assume 'S' to be 'L' in this particular case only (after looking at the)
-    if arrays[x][y] == 'S':
-        current_pipe = 'L'
-    else:
-        current_pipe = arrays[x][y]
+    current_pipe = arrays[x][y] if arrays[x][y] != 'S' else 'F' # assuming 'S' is actually 'F'
+    
+    for dx, dy in directions.get(current_pipe, []):
+        nx, ny = x + dx, y + dy
+        if (nx, ny) not in visited and are_adjacent(x, y, nx, ny):
+            visited.add((nx, ny))
+            queue.append((nx, ny, dist + 1))
 
-    for (change_x, change_y) in directions.get(current_pipe, []):
 
-        # check new_x and new_y if it is legit accd. to rule
-        new_x, new_y = x + change_x, y + change_y 
-
-        if (new_x, new_y) not in visited and bool_adjacent_based_on_given_directions(x, y, new_x, new_y):
-            visited.add((new_x, new_y))
-            queue.append((new_x, new_y, step+1))
-
-    # Find the maximum distance
+# Find the maximum distance
 max_distance = max(steps_increment.values())
 
 print(max_distance) 
