@@ -155,7 +155,12 @@ For the given problem, $S_i = L_i$, making the LCM the correct answer. If the st
     - First: Cycle detection - find all cycles/loops in this graph (start and end at same vertex) using BFS/DFS
         - Then: Got a cycle, find the path from S to the farthest point possible (how)
     - Second: Cycle detection but with topological sorting
-- please look at solution on this day, very important, [here](https://github.com/quanghieu31/adventofcode/blob/main/2023/day10/solution.py)
+- please look at solution on this day, very important, [here](https://github.com/quanghieu31/adventofcode/blob/main/2023/day10/solution.py) and reference to [this one](https://advent-of-code.xavd.id/writeups/2023/day/10/)
+- **Note the grid data structure** = a map of coordinate (indices of row and column) and its value
 
 ### Day 11: 
-
+- "Shortest path": first thought - Dijkstra's Algo
+- transpose a list of list (rows of cols) into ("cols" of "rows"): `transposed = list(map(list, zip(*rows)))`
+    - transpose a 2d array (list of list) 
+    - the `*` unpacks the elements inside the main list or the inner lists
+    - `zip` pairs up the elements consequentially from each inner list into tuples: i.e. `[[a, b, c], [d, e, f], [g, h, i]]` then zip the pairs consequentially like (a,d,g) as first pair, then (b,e,h) second, so on, and result is `[(a, d, g), (b, e, h), (c, f, i)]`
