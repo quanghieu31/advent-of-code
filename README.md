@@ -160,7 +160,40 @@ For the given problem, $S_i = L_i$, making the LCM the correct answer. If the st
 
 ### Day 11: 
 - "Shortest path": first thought - Dijkstra's Algo
+    - but seems not necessary in this case because the path is just up/down/left/right and so the shortest path can be i.e. all steps down then all steps right
+    - so, the problem should be about visualizing a rectangle based on the two points on grid and sum the one width and one height
+    - this is also called the Manhattan distance
 - transpose a list of list (rows of cols) into ("cols" of "rows"): `transposed = list(map(list, zip(*rows)))`
     - transpose a 2d array (list of list) 
     - the `*` unpacks the elements inside the main list or the inner lists
     - `zip` pairs up the elements consequentially from each inner list into tuples: i.e. `[[a, b, c], [d, e, f], [g, h, i]]` then zip the pairs consequentially like (a,d,g) as first pair, then (b,e,h) second, so on, and result is `[(a, d, g), (b, e, h), (c, f, i)]`
+- build a grid from 2d array (very efficiently)
+    ```python
+    GridPoint = tuple[int, int]     # a tuple of two integers = cooridinate
+    Grid = dict[GridPoint, str]     # the keys are GridPoints and the values are strings
+
+    def parse_grid(array2d: list[list]) -> Grid:
+        grid_dict = {}
+        for row, line in enumerate(array2d):
+            for col, ele in enumerate(line):
+                grid_dict[(row, col)] = ele
+
+        # assign unique_number for galaxy (for this Day puzzle only)
+        unique_number = 1
+        for k, v in grid_dict.items():
+            if v == "#":
+                grid_dict[k] = unique_number
+                unique_number += 1
+
+        return grid_dict
+    ```
+- find shortest Manhattan path if the only movement is 1-step increment on a grid
+    ```python
+    # shortest_path function between two given coords on a grid
+    def shortest_path(coord_g1, coord_g2):
+        height = coord_g1[0] - coord_g2[0]
+        width = coord_g1[1] - coord_g2[1]
+        shortest_steps = abs(height) + abs(width)
+        return shortest_steps
+    ```
+- Day 2 needs better way to handle the iterations and looping 1,000,000 empty rows/cols (instead of manually creating all, just assign the incremented coordinate for non-empty rows, cols). Review [this one](https://github.com/quanghieu31/adventofcode/blob/main/2023/day11/shorter_solution.py).
