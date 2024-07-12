@@ -197,3 +197,29 @@ For the given problem, $S_i = L_i$, making the LCM the correct answer. If the st
         return shortest_steps
     ```
 - Day 2 needs better way to handle the iterations and looping 1,000,000 empty rows/cols (instead of manually creating all, just assign the incremented coordinate for non-empty rows, cols). Review [this one](https://github.com/quanghieu31/adventofcode/blob/main/2023/day11/shorter_solution.py).
+
+### Day 12:
+- This puzzle is the hardest I ever seen. Reddit says it involves recursion and DP but honestly I need to figure out how!
+
+### Day 13:
+- A great code for checking reflection between rows using generator (cost efficient). `zip` pairs elements from two lists together until the shorter one is exhausted.
+    ```python
+    def reflection_row(block: list[str]) -> int:
+        n_rows, n_cols = len(block), len(block[0])
+
+        for idx in range(1, n_rows):
+            up = block[:idx]
+            bot = block[idx:]
+            if all(l == r for l, r in zip(reversed(up), bot)):
+                return idx
+
+        return 0
+
+    def reflection_column(block: list[str]) -> int:
+
+        transposed_list = list(map(list, zip(*block)))
+        transposed_strings = ["".join(row) for row in transposed_list]
+
+        return reflection_row(transposed_strings)
+    ```
+- Again, tranposing is handy: `transposed = list(map(list, zip(*rows)))`
