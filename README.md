@@ -223,3 +223,14 @@ For the given problem, $S_i = L_i$, making the LCM the correct answer. If the st
         return reflection_row(transposed_strings)
     ```
 - Again, tranposing is handy: `transposed = list(map(list, zip(*rows)))`
+
+### Day 14:
+- It seems doing things in rows is more comfortable than in columns given a grid puzzle!
+- Remember:
+    ```python
+    while idx > 0 and col[idx-1] == '.':
+        col[idx-1], col[idx] = col[idx], col[idx-1]  # swap 'O' with '.' 
+        # => must be same code line, not different code line
+        idx -= 1  # check further left
+    ```
+- `zip` is again very helpful for transposing, or want to something parallel given two iterables
