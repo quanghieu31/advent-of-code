@@ -234,3 +234,8 @@ For the given problem, $S_i = L_i$, making the LCM the correct answer. If the st
         idx -= 1  # check further left
     ```
 - `zip` is again very helpful for transposing, or want to something parallel given two iterables
+
+
+### Day 15:
+- Two stars easily, this one is simply building a hashmap carefully following the instruction:
+- Remember: extracting characters with regex is helpful with `re.findall(pattern, string)` and (`\d+`, `[a-zA-Z]`,...). 
