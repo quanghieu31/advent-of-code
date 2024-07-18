@@ -239,3 +239,10 @@ For the given problem, $S_i = L_i$, making the LCM the correct answer. If the st
 ### Day 15:
 - Two stars easily, this one is simply building a hashmap carefully following the instruction:
 - Remember: extracting characters with regex is helpful with `re.findall(pattern, string)` and (`\d+`, `[a-zA-Z]`,...). 
+
+
+### Day 16: Skip for now
+
+
+### Day 17: It's Dijkstra, my old friend!
+- read references and help with this puzzle
