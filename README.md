@@ -198,7 +198,7 @@ For the given problem, $S_i = L_i$, making the LCM the correct answer. If the st
     ```
 - Day 2 needs better way to handle the iterations and looping 1,000,000 empty rows/cols (instead of manually creating all, just assign the incremented coordinate for non-empty rows, cols). Review [this one](https://github.com/quanghieu31/adventofcode/blob/main/2023/day11/shorter_solution.py).
 
-### Day 12:
+### Day 12: It's Dijkstra!
 - This puzzle is the hardest I ever seen. Reddit says it involves recursion and DP but honestly I need to figure out how!
 
 ### Day 13:
@@ -241,8 +241,12 @@ For the given problem, $S_i = L_i$, making the LCM the correct answer. If the st
 - Remember: extracting characters with regex is helpful with `re.findall(pattern, string)` and (`\d+`, `[a-zA-Z]`,...). 
 
 
-### Day 16: Skip for now
+### Day 16: Skip for now but it's Dijkstra.
 
 
 ### Day 17: It's Dijkstra, my old friend!
 - read references and help with this puzzle
+
+### Day 19: 
+- I now realized I much enjoy doing non-grid puzzles! Recursion is usually better, I would say, but `while` loop makes more sense visually to me. The trick to this one is to make sure the input got written in a nice and tidy data structure.
+- Part 2 is tough but I'll try later
