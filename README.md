@@ -250,3 +250,6 @@ For the given problem, $S_i = L_i$, making the LCM the correct answer. If the st
 ### Day 19: 
 - I now realized I much enjoy doing non-grid puzzles! Recursion is usually better, I would say, but `while` loop makes more sense visually to me. The trick to this one is to make sure the input got written in a nice and tidy data structure.
 - Part 2 is tough but I'll try later
+
+### Day 25:
+- it's BFS again!
