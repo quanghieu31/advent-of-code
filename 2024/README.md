@@ -21,3 +21,15 @@
 | Removes the first occurrence of the value     | Removes the element by index            |
 | \( O(n) \), slower for large lists with duplicates | \( O(n) \), faster for index removal|
 
+
+### Day 3
+(30 mins)
+I knew regex would appear at some point-- still a regex noob. `mul\((\d+),(\d+)\)`
+
+- `mul\(`: matches the text "mul(" 
+- `(\d+)`: captures one or more digits as the first group
+- `,`: matches a comma
+- `(\d+)`: captures one or more digits as the second group
+- `\)`: matches the closing parenthesis
+
+### Day 4
