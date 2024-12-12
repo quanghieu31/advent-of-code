@@ -33,3 +33,15 @@ I knew regex would appear at some point-- still a regex noob. `mul\((\d+),(\d+)\
 - `\)`: matches the closing parenthesis
 
 ### Day 4
+- If can't think of better way, brute force but with <u>**careful conditions**</u>:
+    - If there is no X at the starting index, ignore immediately
+    - 8 directions (2 for rows, 2 for cols, and 4 for diagonal)
+- A possible better way:
+```python
+directions = [
+    (0, 1), (0, -1),                    # horizontal
+    (1, 0), (-1, 0),                    # vertical
+    (1, 1), (-1, -1), (1, -1), (-1, 1)  # diagonal
+]
+```
+
