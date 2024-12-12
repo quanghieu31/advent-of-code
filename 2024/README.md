@@ -33,6 +33,7 @@ I knew regex would appear at some point-- still a regex noob. `mul\((\d+),(\d+)\
 - `\)`: matches the closing parenthesis
 
 ### Day 4
+(1 hour)
 - If can't think of better way, brute force but with <u>**careful conditions**</u>:
     - If there is no X at the starting index, ignore immediately
     - 8 directions (2 for rows, 2 for cols, and 4 for diagonal)
@@ -44,4 +45,9 @@ directions = [
     (1, 1), (-1, -1), (1, -1), (-1, 1)  # diagonal
 ]
 ```
+
+### Day 5
+(45 mins)
+- Brute force with three `for` loops again worked but not efficiently as look-up runtime is $O(M×L×O)$ and lots of redundant operations
+- Set look up is only O(1). https://stackoverflow.com/a/44080017/19562762
 
