@@ -43,6 +43,9 @@ while True:
         row, col = current_coord
         current_cell = grid[row, col]
 
+        if row < 0 or col < 0:
+            break
+
         if current_cell in directions.keys():
             drow, dcol = directions[history[-1]]
             grid[row, col] = "X"
@@ -71,6 +74,6 @@ while True:
         current_coord = next_coord
 
     except IndexError:
-        break 
+        break
 
 print(np.count_nonzero(grid == "X"))
