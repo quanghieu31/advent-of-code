@@ -51,3 +51,17 @@ directions = [
 - Brute force with three `for` loops again worked but not efficiently as look-up runtime is $O(M×L×O)$ and lots of redundant operations
 - Set look up is only O(1). https://stackoverflow.com/a/44080017/19562762
 
+### Day 6 
+(1 hour) 
+- Brute force with lots of inherent logics/conditions to think about. Using a `history` list to keep track of the previous values, but not sure if this is optimal
+- A more intuitve way to write direction (vertical and horizontally only) => as a dictionary
+```python
+directions = {
+    "^": (-1, 0),
+    ">": (0, 1),
+    "v": (1, 0),
+    "<": (0, -1),
+}
+```
+- Convert a list of lists into a numpy grid that we can get/set/del with `grid[i, j]`: `np.array([list(line) for line in f.read().split()])`
+- unpacking: `grid[*(i, j)]`
