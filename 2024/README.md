@@ -65,3 +65,7 @@ directions = {
 ```
 - Convert a list of lists into a numpy grid that we can get/set/del with `grid[i, j]`: `np.array([list(line) for line in f.read().split()])`
 - unpacking: `grid[*(i, j)]`
+
+### Day 7
+(50 mins)
+- The core problem is how to get all the different combinations of the operators given the numbers
