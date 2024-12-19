@@ -69,3 +69,10 @@ directions = {
 ### Day 7
 (50 mins)
 - The core problem is how to get all the different combinations of the operators given the numbers
+
+### Day 8
+(1 hour)
+- A reference dictionary is always helpful
+- `np.array(list)` for list of lists is handy
+- instead of going through all grid multiple time, just go through it once (O(n)) and collect the important coordinates and store them in the reference dictionary.
+- later on, just work through that dictionary
