@@ -76,3 +76,9 @@ directions = {
 - `np.array(list)` for list of lists is handy
 - instead of going through all grid multiple time, just go through it once (O(n)) and collect the important coordinates and store them in the reference dictionary.
 - later on, just work through that dictionary
+
+
+### Day 9
+(30 mins)
+- Brute force: The second loop inside the reversed iteration has a complexity of O(n^2) due to iterating through the `full` list for every non-dot character in `reversed_full`.
+- Reddit suggests to use double-ended queue (deque), but how? (later)
