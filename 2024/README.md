@@ -82,3 +82,8 @@ directions = {
 (30 mins)
 - Brute force: The second loop inside the reversed iteration has a complexity of O(n^2) due to iterating through the `full` list for every non-dot character in `reversed_full`.
 - Reddit suggests to use double-ended queue (deque), but how? (later)
+
+
+### Day 10
+
+- A simple DFS since we need to explore multiple branches and count.
